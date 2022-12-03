@@ -14,10 +14,40 @@
         android:theme="@style/Theme.Math_quiz"
         tools:targetApi="31">
         <activity
-            android:name=".Splash_Screen"
+            android:name=".dashboard.Score_Activity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".dashboard.question_set"
+            android:exported="false" />
+        <activity
+            android:name=".admin.QuestionDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.QuestionsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.SetsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.admin_quiz_activity"
+            android:exported="false" /> <!-- <activity -->
+        <!-- android:name=".admin." -->
+        <!-- android:exported="false" /> -->
+        <activity
+            android:name=".dashboard.Question_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".login.Otp_auth"
+            android:exported="false" />
+        <activity
+            android:name=".home.Home_page"
+            android:exported="false" />
+        <activity
+            android:name=".splash.Splash_Screen"
+            android:exported="false" />
+        <activity
+            android:name=".login.MainActivity"
+            android:theme="@style/Theme.Math_quiz_without_actionbar"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

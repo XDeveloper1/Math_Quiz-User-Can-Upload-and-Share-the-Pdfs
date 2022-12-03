@@ -1,4 +1,4 @@
-package com.xdev.math_quiz;
+package com.xdev.math_quiz.login;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -6,6 +6,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.smarteist.autoimageslider.SliderViewAdapter;
+import com.xdev.math_quiz.R;
 
 public  class slider_Adapter extends SliderViewAdapter<slider_Adapter.Holder> {
     int[] images;
