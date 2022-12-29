@@ -1,8 +1,5 @@
 package com.xdev.math_quiz.login;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,18 +9,18 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
 import com.xdev.math_quiz.R;
-import com.xdev.math_quiz.home.Home_frag;
 import com.xdev.math_quiz.home.Home_page;
 
 import java.util.concurrent.TimeUnit;
@@ -41,6 +38,7 @@ public class Otp_auth extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_otp_auth);
+        getSupportActionBar().hide();
         mAuth = FirebaseAuth.getInstance();
         editphno = findViewById(R.id.editphonenumber);
 
@@ -130,7 +128,10 @@ public class Otp_auth extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            startActivity(new Intent(Otp_auth.this, Home_page.class));
+                            String number = phone_number.getText().toString();
+                            Intent intent = new Intent(Otp_auth.this, Home_page.class);
+                            intent.putExtra("number", number);
+                            startActivity(intent);
                         } else {
                             b2.setEnabled(true);
                             Toast.makeText(Otp_auth.this, "sign in error", Toast.LENGTH_SHORT).show();
